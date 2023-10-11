@@ -12,15 +12,16 @@ public enum RoadLine
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float positionX;
-
+    [SerializeField] float positionX = 3.5f;
     [SerializeField] RoadLine roadLine;
 
     void Update()
     {
         // 캐릭터 이동 함수
         Move();
-        
+
+        // 캐릭터 이동 상태
+        Status();
     }
 
     public void Move()
@@ -49,5 +50,21 @@ public class Player : MonoBehaviour
                 roadLine++;
             }
         }
+
     }
+
+    public void Status()
+    {
+        switch (roadLine)
+        {
+            case RoadLine.LEFT : transform.position = new Vector3(-positionX, 0 , 0);
+                break;
+            case RoadLine.MIDDLE : transform.position = Vector3.zero;
+                break;
+            case RoadLine.RIGHT : transform.position = new Vector3(+positionX, 0 , 0);
+                break;
+        }
+    }
+
+
 }
