@@ -7,13 +7,14 @@ public enum RoadLine
     LEFT = -1,
     MIDDLE = 0,
     RIGHT = 1
-};
-
+}
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float positionX = 3.5f;
     [SerializeField] RoadLine roadLine;
+    [SerializeField] float positionX = 3.5f;
+
+    [SerializeField] ObjectSound objectSound = new ObjectSound();
 
     void Update()
     {
@@ -29,6 +30,8 @@ public class Player : MonoBehaviour
         // 왼쪽 방향 키를 입력했을때
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            AudioManager.instance.Sound(objectSound.audioClip[0]);
+
             if (roadLine == RoadLine.LEFT)
             {
                 roadLine = RoadLine.LEFT;
@@ -39,9 +42,12 @@ public class Player : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.RightArrow))
+        // 오른쪽 방향 키를 입력했을때
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if(roadLine == RoadLine.RIGHT)
+            AudioManager.instance.Sound(objectSound.audioClip[0]);
+
+            if (roadLine == RoadLine.RIGHT)
             {
                 roadLine = RoadLine.RIGHT;
             }
@@ -50,7 +56,6 @@ public class Player : MonoBehaviour
                 roadLine++;
             }
         }
-
     }
 
     public void Status()
@@ -65,6 +70,4 @@ public class Player : MonoBehaviour
                 break;
         }
     }
-
-
 }
