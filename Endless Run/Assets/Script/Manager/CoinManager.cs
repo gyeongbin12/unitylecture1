@@ -5,7 +5,8 @@ using UnityEngine;
 public class CoinManager : MonoBehaviour
 {
     [SerializeField] int interval = 2;
-    [SerializeField] int createCount = 15;
+    [SerializeField] int createCount = 20;
+    [SerializeField] float positionX = 3.5f;
 
     [SerializeField] GameObject coinPreFab;
     [SerializeField] Transform createPosition;
@@ -23,9 +24,25 @@ public class CoinManager : MonoBehaviour
 
             coin.transform.SetParent(createPosition);
 
-            coin.transform.position = new Vector3(coin.transform.position.x, coin.transform.position.y, interval * i);
+            coin.transform.localPosition = new Vector3(coin.transform.position.x, coin.transform.position.y, interval * i);
         }
     }
 
-    
+    public void NewPosition()
+    {
+        createPosition.gameObject.SetActive(true);
+
+        RoadLine roadLine = (RoadLine)Random.Range(-1, 2);
+
+        switch(roadLine)
+        {
+            case RoadLine.LEFT : createPosition.localPosition = new Vector3(-positionX, 0, 0);
+                break;
+            case RoadLine.MIDDLE: createPosition.localPosition = Vector3.zero;
+                break;
+            case RoadLine.RIGHT: createPosition.localPosition = new Vector3(+positionX, 0, 0);
+                break;
+
+        }
+    }
 }
