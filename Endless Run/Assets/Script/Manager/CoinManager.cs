@@ -15,13 +15,16 @@ public class CoinManager : MonoBehaviour
     [SerializeField] int createCount = 20;
     [SerializeField] float positionX = 3.5f;
 
+    [SerializeField] GameObject rotatePrefab;
+
     [SerializeField] GameObject coinPreFab;
-    [SerializeField] List<GameObject> coins;
+    [SerializeField] List<GameObject> coins;    
     [SerializeField] Transform createPosition;
 
     void Start()
     {
         percentage = GetComponent<Percentage>();
+
         CreatCoin();
     }
 
@@ -42,6 +45,11 @@ public class CoinManager : MonoBehaviour
     {
         foreach (var element in coins)
         {
+            element.transform.rotation = Quaternion.Euler
+            (
+                90, 0, rotatePrefab.transform.rotation.eulerAngles.z
+            );
+
             element.SetActive(true);
         }
 
@@ -52,6 +60,7 @@ public class CoinManager : MonoBehaviour
             coins[itemCount].SetActive(false);
         }
     }
+
 
     public void NewPosition()
     {
