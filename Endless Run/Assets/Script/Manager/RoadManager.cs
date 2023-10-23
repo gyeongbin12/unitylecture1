@@ -13,6 +13,7 @@ public class RoadManager : MonoBehaviour
 
     private void Start()
     {
+        roads.Capacity = 10;
         roadPosition = NewPosition;
     }
 

@@ -9,7 +9,7 @@ public class Item : MonoBehaviour
 
     protected void Awake()
     {
-        rotatePrefab = GameObject.Find("Rotation Prefab");
+        rotatePrefab = GameObject.Find("Rotate Prefab");
     }
 
     protected void OnEnable()

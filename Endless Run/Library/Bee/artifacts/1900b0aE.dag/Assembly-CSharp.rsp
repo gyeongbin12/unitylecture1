@@ -363,6 +363,7 @@
 "Assets/Script/Items/Item.cs"
 "Assets/Script/Items/Magnet.cs"
 "Assets/Script/Manager/AudioManager.cs"
+"Assets/Script/Manager/ButtonManager.cs"
 "Assets/Script/Manager/CoinManager.cs"
 "Assets/Script/Manager/GameManager.cs"
 "Assets/Script/Manager/InterfaceManager.cs"

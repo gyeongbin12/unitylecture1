@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638333108463501947
-    m_Hash: 2972199949
+      ticks: 638336557525359471
+    m_Hash: 380579864
   m_LockFileStatus:
     m_FilePath: C:/Users/Administrator/Desktop/unitylecture1/Endless Run/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638333108753112690
-    m_Hash: 3120431348
+      ticks: 638336557525369716
+    m_Hash: 2769799353
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -388,10 +388,12 @@ m_ResolvedPackages:
     - 3.0.22
     - 3.0.24
     - 3.0.25
+    - 3.0.26
     compatible:
     - 3.0.24
     - 3.0.25
-    recommended: 3.0.25
+    - 3.0.26
+    recommended: 3.0.26
     deprecated: []
   dependencies:
   - name: com.unity.ext.nunit
@@ -471,11 +473,13 @@ m_ResolvedPackages:
     - 2.0.18
     - 2.0.20
     - 2.0.21
+    - 2.0.22
     compatible:
     - 2.0.18
     - 2.0.20
     - 2.0.21
-    recommended: 2.0.21
+    - 2.0.22
+    recommended: 2.0.22
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
